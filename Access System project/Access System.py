@@ -1,6 +1,6 @@
-from LCD1602 import LCD      #imports LCD Library
-from machine import Pin,PWM      #imports Pin library
-import utime                 #imports to integrate time
+from LCD1602 import LCD          #imports LCD Library
+from machine import Pin,PWM      #imports Pin library and the PWM library to emnable control of things such as LED brightness, motor speed and  servo motors.
+import utime                     #imports to time libary to make use of time methods.
 
 
 button1 = Pin(14,Pin.IN,Pin.PULL_DOWN)   #Assigns the GP14 pin to the first button's variable.
@@ -9,7 +9,7 @@ button3 = Pin(12,Pin.IN,Pin.PULL_DOWN)   #Assigns the GP12 pin to the third butt
 buzzer =  Pin(20,Pin.OUT)                #Assigns the GP20 pin to the alert buzzer
 led1 = Pin(10,Pin.OUT)                   #Assigns the GP10 pin to led1(RED LED)
 led2 = Pin(15,Pin.OUT)                   #Assigns the GP15 pin to led2(GREEN LED)
-servo = PWM(Pin(16))     #Assigning the GP16 pin to a variable
+servo = PWM(Pin(16))                     #Assigning the GP16 pin to a variable
 lcd = LCD()                              #function to allow the use of lcd methods
 
 servo.freq(50)
